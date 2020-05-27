@@ -5,8 +5,9 @@ from sign.models import Event, Guest
 
 
 class EventAdmin(admin.ModelAdmin):  # 没生效？？？？？？？？？？？？？？？？？？？？？？
-    list_display = ['id', 'name', 'status', 'address', 'start_time']
-    search_fields = ['name']  # 增加搜索栏
+    fields = ('name','status','address','start_time')
+    list_display = ('id', 'name', 'status', 'address', 'start_time')
+    search_fields = ('name')  # 增加搜索栏
     list_filter = ['status']  # 增加过滤器
 
 
