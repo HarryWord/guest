@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 #发布会表
 class Event(models.Model):
     name = models.CharField(max_length=100) # 发布会标题
@@ -12,6 +14,7 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
 
 #嘉宾表
 class Guest(models.Model):
@@ -26,6 +29,7 @@ class Guest(models.Model):
 class Meta:
     unique_together = ("event","phone") # 将手机号和发布会id设置为联合主键
 
-def __str__(self): # 告诉python如何将对象以str的方式显示出来
+
+def __str__(self):  # 告诉python如何将对象以str的方式显示出来
     return self.realname
 
